@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swadisht Meals</title>
+
+    <style>
+
+        /* ---------- Global ---------- */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f2f2f7;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff7a00;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            background: linear-gradient(to right, #ff8c00, #ffa733);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            margin-top: 15px;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 18px;
+        }
+
+        nav a {
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* ---------- Sections ---------- */
+        section {
+            background: white;
+            max-width: 950px;
+            margin: 25px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+        }
+
+        h2 {
+            color: #ff7a00;
+            border-left: 6px solid #ff7a00;
+            padding-left: 10px;
+        }
+
+        /* ---------- Tables ---------- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #ff7a00;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        td {
+            background: #fff;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover td {
+            background: #fff6e9;
+        }
+
+        /* ---------- Form ---------- */
+        form {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #fff8ef;
+            border: 1px solid #ffd9b3;
+        }
+
+        form label {
+            font-weight: 600;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #ff8c00;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        button:hover {
+            background: #e67a00;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 30px;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Swadisht Meals</h1>
+    <p>Home-style Tiffins & Daily Meals — Warangal & Nashik</p>
+    <nav>
+        <ul>
+            <li><a href="#menu">Daily Menu</a></li>
+            <li><a href="#prices">Prices</a></li>
+            <li><a href="#contact">Order / Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="menu">
+    <h2>Daily Menu</h2>
+
+    <h3>Warangal</h3>
+    <table>
+        <tr><th>Day</th><th>Menu</th></tr>
+        <tr><td>Monday</td><td>Rice, Sambar, Veg Fry, Curd</td></tr>
+        <tr><td>Tuesday</td><td>Chapati, Paneer Curry, Dal</td></tr>
+        <tr><td>Wednesday</td><td>Pulao, Potato Fry, Curd</td></tr>
+        <tr><td>Thursday</td><td>Lemon Rice, Rasam, Bhaji</td></tr>
+        <tr><td>Friday</td><td>Chicken Curry, Rice</td></tr>
+        <tr><td>Saturday</td><td>Biryani (Veg/Non-Veg), Raita</td></tr>
+        <tr><td>Sunday</td><td>Special Thali + Sweet</td></tr>
+    </table>
+
+    <h3>Nashik</h3>
+    <table>
+        <tr><th>Day</th><th>Menu</th></tr>
+        <tr><td>Monday</td><td>Chapati, Mix Veg, Dal</td></tr>
+        <tr><td>Tuesday</td><td>Pav Bhaji</td></tr>
+        <tr><td>Wednesday</td><td>Khichdi, Curd</td></tr>
+        <tr><td>Thursday</td><td>Rice, Kadhi, Sabzi</td></tr>
+        <tr><td>Friday</td><td>Fish Curry, Rice</td></tr>
+        <tr><td>Saturday</td><td>Misal Pav</td></tr>
+        <tr><td>Sunday</td><td>Special Thali + Sweet</td></tr>
+    </table>
+</section>
+
+<section id="prices">
+    <h2>Prices</h2>
+    <table>
+        <tr>
+            <th>Meal Type</th>
+            <th>Warangal</th>
+            <th>Nashik</th>
+        </tr>
+        <tr>
+            <td>Regular Meal</td>
+            <td>₹70</td>
+            <td>₹75</td>
+        </tr>
+        <tr>
+            <td>Large Meal</td>
+            <td>₹95</td>
+            <td>₹100</td>
+        </tr>
+        <tr>
+            <td>Special Thali</td>
+            <td>₹110</td>
+            <td>₹120</td>
+        </tr>
+        <tr>
+            <td>Biryani</td>
+            <td>₹120</td>
+            <td>₹130</td>
+        </tr>
+    </table>
+</section>
+
+<section id="contact">
+    <h2>Contact & Order</h2>
+
+    <h3>Warangal</h3>
+    <p><strong>Phone:</strong> <a href="tel:+919000011111">+91 90000 11111</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/919000011111">Message Now</a></p>
+
+    <h3>Nashik</h3>
+    <p><strong>Phone:</strong> <a href="tel:+919000022222">+91 90000 22222</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/919000022222">Message Now</a></p>
+
+    <form action="mailto:orders@swadisht.me" method="post" enctype="text/plain">
+        <h3>Quick Order Form</h3>
+
+        <label>Name:</label>
+        <input type="text" name="Name" required>
+
+        <label>Mobile:</label>
+        <input type="tel" name="Mobile" required>
+
+        <label>City:</label>
+        <select name="City">
+            <option value="Warangal">Warangal</option>
+            <option value="Nashik">Nashik</option>
+        </select>
+
+        <label>Order Items:</label>
+        <input type="text" name="Order">
+
+        <button type="submit">Send Order</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 Swadisht Meals — Home-Cooked Tiffin Service</p>
+</footer>
+
+</body>
+</html>
