@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DevOps & Fullstack Development</title>
+	<style>
+		body { font-family: Arial, sans-serif; margin: 20px; background: #f7f7f7; }
+		h2 { color: #333; text-align: center; }
+		.section { max-width: 900px; margin: 18px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+		.img-wrap { display: flex; justify-content: center; margin: 16px 0; }
+		img { border-radius: 6px; }
+
+		/* Forms styling */
+		form { max-width: 720px; margin: 0 auto; }
+		.form-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 12px 16px; align-items: center; }
+		label { font-weight: 600; color: #333; }
+		input[type="text"], input[type="email"], input[type="password"], input[type="number"], select, textarea {
+			padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; width: 100%; box-sizing: border-box;
+		}
+		textarea { resize: vertical; }
+		.inline-options { display: flex; gap: 16px; flex-wrap: wrap; }
+		.actions { display: flex; gap: 12px; justify-content: center; margin-top: 16px; }
+		button, input[type="submit"], input[type="reset"] {
+			padding: 10px 16px; border: none; background: #007bff; color: #fff; border-radius: 6px; cursor: pointer; font-weight: 600;
+		}
+		input[type="reset"] { background: #6c757d; }
+		.hint { font-size: 12px; color: #666; }
+		fieldset { border: 1px solid #e3e3e3; border-radius: 8px; padding: 16px; }
+		legend { padding: 0 8px; color: #444; font-weight: 700; }
+	</style>
+</head>
+<body>
+	<div class="section">
+		<h2>DevOps & Fullstack Development</h2>
+	</div>
+
+	<!-- Student Registration Form -->
+	<div class="section">
+		<h2>Student Registration Form</h2>
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Basic Details</legend>
+				<div class="form-grid">
+					<label for="reg-name">Full Name<span class="hint"> (required)</span></label>
+					<input id="reg-name" name="name" type="text" placeholder="Enter your full name" required>
+
+					<label for="reg-email">Email<span class="hint"> (required)</span></label>
+					<input id="reg-email" name="email" type="email" placeholder="you@example.com" required>
+
+					<label for="reg-password">Password<span class="hint"> (required)</span></label>
+					<input id="reg-password" name="password" type="password" placeholder="Create a password" required>
+
+					<label for="reg-age">Age<span class="hint"> (min 16, max 100)</span></label>
+					<input id="reg-age" name="age" type="number" min="16" max="100" placeholder="18">
+				</div>
+			</fieldset>
+			<div class="actions">
+				<input type="submit" value="Submit Registration">
+				<input type="reset" value="Reset">
+			</div>
+		</form>
+	</div>
+
+	<!-- Choices: Gender, Skills, Course -->
+	<div class="section">
+		<h2>Profile Preferences</h2>
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Gender</legend>
+				<div class="inline-options" role="radiogroup" aria-label="Gender">
+					<label><input type="radio" name="gender" value="male"> Male</label>
+					<label><input type="radio" name="gender" value="female"> Female</label>
+					<label><input type="radio" name="gender" value="other"> Other</label>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Skills</legend>
+				<div class="inline-options">
+					<label><input type="checkbox" name="skills" value="html"> HTML</label>
+					<label><input type="checkbox" name="skills" value="css"> CSS</label>
+					<label><input type="checkbox" name="skills" value="js"> JavaScript</label>
+					<label><input type="checkbox" name="skills" value="python"> Python</label>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Course Selection</legend>
+				<div class="form-grid">
+					<label for="course">Preferred Course</label>
+					<select id="course" name="course">
+						<option value="aiml">B.Tech CSE (AIML)</option>
+						<option value="cse">B.Tech CSE</option>
+						<option value="ece">B.Tech ECE</option>
+						<option value="it">B.Tech IT</option>
+					</select>
+				</div>
+			</fieldset>
+
+			<div class="actions">
+				<input type="submit" value="Save Preferences">
+				<input type="reset" value="Reset">
+			</div>
+		</form>
+	</div>
+
+	<!-- Validation Demo: required, min, max -->
+	<div class="section">
+		<h2>Validation Demo</h2>
+		<form action="#" method="post">
+			<div class="form-grid">
+				<label for="demo-required">Student ID<span class="hint"> (required)</span></label>
+				<input id="demo-required" type="text" name="studentId" placeholder="e.g., 2303A5xxxxx" required>
+
+				<label for="demo-semester">Semester<span class="hint"> (1 to 8)</span></label>
+				<input id="demo-semester" type="number" name="semester" min="1" max="8" value="3">
+			</div>
+			<div class="actions">
+				<input type="submit" value="Validate">
+				<input type="reset" value="Reset">
+			</div>
+		</form>
+	</div>
+
+	<!-- Feedback Form: Textarea + Range Rating -->
+	<div class="section">
+		<h2>Feedback Form</h2>
+		<form action="#" method="post">
+			<div class="form-grid">
+				<label for="fb-comments">Your Feedback</label>
+				<textarea id="fb-comments" name="comments" rows="5" placeholder="Share your thoughts..."></textarea>
+
+				<label for="fb-rating">Rating<span class="hint"> (1 to 5)</span></label>
+				<div>
+					<input id="fb-rating" name="rating" type="range" min="1" max="5" step="1" value="3" list="ticks">
+					<datalist id="ticks">
+						<option value="1"></option>
+						<option value="2"></option>
+						<option value="3"></option>
+						<option value="4"></option>
+						<option value="5"></option>
+					</datalist>
+				</div>
+			</div>
+			<div class="actions">
+				<input type="submit" value="Send Feedback">
+				<input type="reset" value="Reset">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists, Tables, and Links - M.Shashidhar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 2px solid #333;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+        ul, ol {
+            line-height: 1.8;
+            color: #333;
+        }
+        .nav-links {
+            background-color: #007bff;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            color: #ffff00;
+        }
+        .external-link {
+            color: #007bff;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lists, Tables, and Links</h1>
+    <p style="text-align: center; color: #666;"><strong>Student: M. Shashidhar | Roll No: 2303A52291</strong></p>
+    
+    <!-- Navigation Links -->
+    <div class="nav-links">
+        <a href="#nested-list">Nested List</a>
+        <a href="#student-table">Student Marks Table</a>
+        <a href="#timetable">Class Timetable</a>
+        <a href="#external-link">External Links</a>
+    </div>
+    
+    <hr>
+    
+    <!-- Section 1: Nested List -->
+    <h2 id="nested-list">1. Nested List - Course Structure</h2>
+    <ul>
+        <li><strong>CSE (AIML) Program</strong>
+            <ul>
+                <li><strong>Semester 3</strong>
+                    <ul>
+                        <li>Competitive Programming (CP)
+                            <ul>
+                                <li>Data Structures</li>
+                                <li>Algorithms</li>
+                                <li>Problem Solving</li>
+                            </ul>
+                        </li>
+                        <li>High Performance Computing (HPC)
+                            <ul>
+                                <li>Parallel Programming</li>
+                                <li>GPU Computing</li>
+                                <li>Distributed Systems</li>
+                            </ul>
+                        </li>
+                        <li>Disaster Management
+                            <ul>
+                                <li>Risk Assessment</li>
+                                <li>Emergency Response</li>
+                                <li>Recovery Planning</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+    <hr>
+    
+    <!-- Section 2: Student Marks Table -->
+    <h2 id="student-table">2. Student Performance Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Roll Number</th>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>M. Shashidhar</td>
+                <td>2303A52291</td>
+                <td>Competitive Programming (CP)</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>M. Shashidhar</td>
+                <td>2303A52291</td>
+                <td>High Performance Computing (HPC)</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>M. Shashidhar</td>
+                <td>2303A52291</td>
+                <td>Disaster Management</td>
+                <td>89</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <hr>
+    
+    <!-- Section 3: Timetable -->
+    <h2 id="timetable">3. Class Timetable</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Time Slot</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>9:00 - 10:00</strong></td>
+                <td>CP - Lab</td>
+                <td>HPC - Lecture</td>
+                <td>Disaster Mgmt</td>
+                <td>CP - Lecture</td>
+                <td>HPC - Lab</td>
+            </tr>
+            <tr>
+                <td><strong>10:00 - 11:00</strong></td>
+                <td>HPC - Lecture</td>
+                <td>CP - Lab</td>
+                <td>CP - Lecture</td>
+                <td>Disaster Mgmt</td>
+                <td>CP - Lecture</td>
+            </tr>
+            <tr>
+                <td><strong>11:00 - 12:00</strong></td>
+                <td>Disaster Mgmt</td>
+                <td>CP - Lecture</td>
+                <td>HPC - Lab</td>
+                <td>HPC - Lecture</td>
+                <td>Disaster Mgmt</td>
+            </tr>
+            <tr>
+                <td><strong>12:00 - 1:00</strong></td>
+                <td colspan="5" style="text-align: center; background-color: #ffe6e6;"><strong>Lunch Break</strong></td>
+            </tr>
+            <tr>
+                <td><strong>1:00 - 2:00</strong></td>
+                <td>CP - Lecture</td>
+                <td>Disaster Mgmt</td>
+                <td>HPC - Lecture</td>
+                <td>CP - Lab</td>
+                <td>HPC - Lecture</td>
+            </tr>
+            <tr>
+                <td><strong>2:00 - 3:00</strong></td>
+                <td>HPC - Lab</td>
+                <td>CP - Lecture</td>
+                <td>CP - Lab</td>
+                <td>HPC - Lab</td>
+                <td>Disaster Mgmt</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <hr>
+    
+    <!-- Section 4: Internal and External Links -->
+    <h2 id="external-link">4. Important Links</h2>
+    
+    <h3>Internal Links (Navigation):</h3>
+    <ul>
+        <li><a href="#nested-list">Back to Nested List Section</a></li>
+        <li><a href="#student-table">Back to Student Marks Table</a></li>
+        <li><a href="#timetable">Back to Timetable Section</a></li>
+    </ul>
+    
+    <h3>External Educational Resources:</h3>
+    <ul>
+        <li><a class="external-link" href="https://www.github.com" target="_blank">GitHub - Code Repositories & Collaboration</a></li>
+        <li><a class="external-link" href="https://www.stackoverflow.com" target="_blank">Stack Overflow - Programming Q&A</a></li>
+        <li><a class="external-link" href="https://www.geeksforgeeks.org" target="_blank">GeeksforGeeks - Programming & Computer Science</a></li>
+        <li><a class="external-link" href="https://www.leetcode.com" target="_blank">LeetCode - Coding Challenges & Interview Prep</a></li>
+    </ul>
+    
+    <hr>
+    
+    <footer>
+        <p>&copy; 2026 M. Shashidhar | CSE (AIML) | SR University</p>
+        <p>Roll No: 2303A52291</p>
+    </footer>
+</body>
+</html>

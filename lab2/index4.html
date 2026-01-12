@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Semantic Profile & Media Demo</title>
+	<style>
+		:root {
+			--bg: #f6f7f9;
+			--card: #ffffff;
+			--text: #1f2937;
+			--muted: #6b7280;
+			--brand: #2563eb;
+		}
+		* { box-sizing: border-box; }
+		body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); }
+
+		header { background: var(--card); border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 10; }
+		.container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+		header .brand { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+		header h1 { margin: 0; font-size: 22px; }
+		nav ul { display: flex; gap: 14px; list-style: none; padding: 0; margin: 8px 0 0; flex-wrap: wrap; }
+		nav a { text-decoration: none; color: var(--brand); font-weight: 600; }
+		nav a:hover { text-decoration: underline; }
+
+		main { display: grid; grid-template-columns: 1fr; gap: 20px; }
+		@media (min-width: 900px) { main { grid-template-columns: 2fr 1fr; } }
+
+		section, article, aside { background: var(--card); border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; }
+		section h2, article h2 { margin-top: 0; }
+		.muted { color: var(--muted); }
+
+		.media-block { display: grid; gap: 16px; }
+		.iframe-wrap { position: relative; width: 100%; padding-top: 56.25%; border-radius: 8px; overflow: hidden; background: #000; }
+		.iframe-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+		footer { margin-top: 24px; background: var(--card); border-top: 1px solid #e5e7eb; }
+		footer p { margin: 0; text-align: center; padding: 16px; color: var(--muted); }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container brand">
+			<h1>Student Profile — Semantic HTML</h1>
+			<nav aria-label="Primary">
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#media">Media</a></li>
+					<li><a href="#embed">Embed</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container" style="margin-top:16px;">
+		<main>
+			<div class="left">
+				<section id="about" aria-labelledby="about-heading">
+					<h2 id="about-heading">About Me</h2>
+					<article>
+						<h3 class="muted" style="margin-top:0;">M. Shashidhar — CSE (AIML)</h3>
+						<p>
+							I am a student passionate about DevOps and Fullstack development. This page
+							demonstrates semantic HTML structure and media embedding with accessible markup.
+						</p>
+					</article>
+				</section>
+
+				<section id="media" aria-labelledby="media-heading">
+					<h2 id="media-heading">Audio and Video</h2>
+					<div class="media-block">
+						<article aria-labelledby="audio-heading">
+							<h3 id="audio-heading">Audio Demo</h3>
+							<audio controls>
+								<source src="https://commondatastorage.googleapis.com/codeskulptor-assets/Epoq-Lepidoptera.ogg" type="audio/ogg" />
+								Your browser does not support the audio element.
+							</audio>
+							<p class="muted">Audio: Epoq - Lepidoptera (OGG).</p>
+						</article>
+
+						<article aria-labelledby="video-heading">
+							<h3 id="video-heading">Video Demo</h3>
+							<video controls width="100%" poster="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop">
+								<source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+								<source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+								Your browser does not support the video tag.
+							</video>
+							<p class="muted">CC0 sample video from MDN.</p>
+						</article>
+					</div>
+				</section>
+
+				<section id="embed" aria-labelledby="embed-heading">
+					<h2 id="embed-heading">Embedded Content (YouTube)</h2>
+					<div class="iframe-wrap" role="region" aria-label="YouTube video">
+						<iframe
+							src="https://www.youtube.com/embed/OMn1kxwIUp8"
+							title="YouTube video player"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						></iframe>
+					</div>
+					<p class="muted">Replace the video ID to embed any other video.</p>
+				</section>
+			</div>
+
+			<aside aria-label="Quick Info">
+				<h2 style="margin-top:0;">Quick Info</h2>
+				<ul>
+					<li><strong>College:</strong> SR University</li>
+					<li><strong>Branch:</strong> CSE (AIML)</li>
+					<li><strong>Interests:</strong> DevOps, Fullstack, AI/ML</li>
+				</ul>
+				<p class="muted">This aside complements the main content with related information.</p>
+			</aside>
+		</main>
+	</div>
+
+	<footer>
+		<p>&copy; 2026 M. Shashidhar — Semantic HTML & Media Demo</p>
+	</footer>
+</body>
+</html>
