@@ -111,6 +111,26 @@ sequenceDiagram
     Coord->>API: Combine results, generate explanation
     API->>User: JSON response / dashboard visualization
 ```
+## Multi-Agent Workflow
+
+### Agent Orchestration
+
+```mermaid
+flowchart TD
+    User([USER REQUEST <br/> Patient Data, Clinical Context]) --> Coord{COORDINATOR AGENT <br/> Main Router}
+    Coord --> Pred[PREDICTION AGENT]
+    Coord --> Doc[DOCUMENT PARSING AGENT <br/> PDF/CSV/Text]
+    
+    Pred --> GemS[Gemini <br/> Sepsis / Mortality]
+    Doc --> NLP[Clinical NLP <br/> Entity Extract]
+    NLP --> Know[Medical Knowledge Agent]
+    Know --> Rep[Clinical Report Agent]
+    
+    GemS --> Formatter[RESPONSE FORMATTING <br/> JSON Response]
+    Rep --> Formatter
+    
+    Formatter --> Dash([FRONTEND DASHBOARD <br/> Visualization])
+```
 
 ### Agent Responsibilities
 
