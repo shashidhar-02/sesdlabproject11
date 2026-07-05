@@ -3,11 +3,11 @@
 ### Five specialized AI agents working in concert to monitor patients, predict deterioration, and support faster, safer ICU decisions.
 <div style="text-align: center; margin: 20px 0;">
   <a href="https://drive.google.com/file/d/1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF=w400" alt="PraOjas AI Landing Page" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
+    <img src="https://lh3.googleusercontent.com/d/1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF=w400" alt="PraOjas AI Landing Page" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 400%; height: auto;">
   </a>
   <p><strong></strong></p>
 </div>
----
+
 
 ## 1. Title
 **PraOjas AI: A Multi-Agent Clinical Decision Support System for ICU Care**
