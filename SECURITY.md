@@ -40,9 +40,7 @@ PraOjas AI ingests a patient's vitals, labs, and clinical notes, and returns a s
 
 **User workflow:**
 1. A clinician logs into the dashboard and lands on the **ICU Overview** — active bed count, critical patient count, interventions performed that day, overall AI model accuracy, a 24-hour sepsis-risk trend, and a Stable/Warning/Critical breakdown.
-
 ![ICU Overview dashboard — bed count, critical patients, interventions, AI model accuracy, sepsis-risk trend, patient status breakdown](https://drive.google.com/uc?export=view&id=1g_VdqaflV8sGSY54EVayFlig_1s3MUHg)
-
 2. The **Patients** view shows the full **ICU Roster** — every patient's live HR/BP/SpO₂ and computed sepsis-risk percentage, filterable by status and department.
 
 ![ICU Roster / Patient Registry — live HR, BP, SpO₂, and sepsis-risk % across all admitted patients](https://drive.google.com/uc?export=view&id=1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP)
