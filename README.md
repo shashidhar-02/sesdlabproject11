@@ -55,11 +55,12 @@ PraOjas AI ingests a patient's live vitals, lab data, and clinical notes, and pr
 
 
 <div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8=w400" alt="Patient Profile & Risk Assessment" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
+  <a href="https://drive.google.com/file/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <img src="https://lh3.googleusercontent.com/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP=w400" alt="ICU Roster Overview" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
   </a>
   <p><strong>Click to view full screenshot</strong></p>
 </div>
+
 
 5. Behind the scenes, the **Monitoring Agent** streams and trends the vitals/labs shown on this page, the **Document Understanding Agent** parses the Clinical Notes tab, the **Medical Knowledge Agent** grounds any clinical guidance referenced, and the **Prediction Agent** computes the sepsis-risk percentage shown throughout the UI.
 6. The clinician can click **"Initiate AI Risk Analysis"** at any time — this triggers the **Coordinator Agent**, which synthesizes all four specialist agents' outputs into a single explainable recommendation, logged to that patient's Decision Log rather than surfaced as an opaque score.
