@@ -1,13 +1,10 @@
 # PraOjas AI: A Multi-Agent Clinical Decision Support System for ICU Care
 
 ### Five specialized AI agents working in concert to monitor patients, predict deterioration, and support faster, safer ICU decisions.
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF=w400" alt="PraOjas AI Landing Page" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 400%; height: auto;">
-  </a>
-  <p><strong></strong></p>
-</div>
 
+![PraOjas AI landing page — Predicting Critical Trajectories Before They Happen](https://drive.google.com/uc?export=view&id=1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF)
+
+---
 
 ## 1. Title
 **PraOjas AI: A Multi-Agent Clinical Decision Support System for ICU Care**
@@ -44,56 +41,57 @@ PraOjas AI ingests a patient's live vitals, lab data, and clinical notes, and pr
 1. A clinician (e.g., a Chief Intensivist with admin access) logs into the PraOjas AI web app.
 2. The **ICU Overview dashboard** greets them with ward-level analytics: total active ICU beds, count of critical patients, interventions performed that day, overall AI model accuracy, a 24-hour average sepsis-risk trend chart, and a breakdown of current patient status (Stable / Warning / Critical).
 3. From the **Patients** view, the clinician sees a full **ICU Roster** — every patient's status, department, live HR/BP/SpO₂, computed sepsis-risk percentage, and admission date, sortable and filterable by status and department.
+![ICU Overview dashboard — bed count, critical patients, interventions, AI model accuracy, sepsis-risk trend, patient status breakdown](https://drive.google.com/uc?export=view&id=1g_VdqaflV8sGSY54EVayFlig_1s3MUHg)
 
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP=w400" alt="ICU Roster Overview" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
-  </a>
-  <p><strong>Click to view full screenshot</strong></p>
-</div>
+![ICU Roster / Patient Registry — live HR, BP, SpO₂, and sepsis-risk % across all admitted patients](https://drive.google.com/uc?export=view&id=1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP)
+
 4. Opening an individual patient (e.g., a 67-year-old male flagged Critical) surfaces a dedicated patient workspace: live vitals tiles (heart rate, systolic BP, SpO₂, temperature, respiratory rate, lactate), a 12-hour multi-line vitals trend chart, and tabs for Vitals History, Lab Results, Medications, Clinical Notes, and a Decision Log.
 
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8=w400" alt="Patient Profile & Risk Assessment" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
-  </a>
-  <p><strong>Click to view full screenshot</strong></p>
-</div>
-
+![Individual patient workspace — live vitals tiles and 12-hour trend chart for a Critical patient](https://drive.google.com/uc?export=view&id=1_0xdNFiWGp1TA_2PV8QzlNRhuPjEaVoy)
 5. Behind the scenes, the **Monitoring Agent** streams and trends the vitals/labs shown on this page, the **Document Understanding Agent** parses the Clinical Notes tab, the **Medical Knowledge Agent** grounds any clinical guidance referenced, and the **Prediction Agent** computes the sepsis-risk percentage shown throughout the UI.
 6. The clinician can click **"Initiate AI Risk Analysis"** at any time — this triggers the **Coordinator Agent**, which synthesizes all four specialist agents' outputs into a single explainable recommendation, logged to that patient's Decision Log rather than surfaced as an opaque score.
 7. Direct clinical actions (Order Labs, Adjust Meds, Alert Team, Export Report) are available inline, so the workflow goes from signal → explanation → action without leaving the page.
 8. The system supports the decision — it does not replace the clinician.
 
 ## 7. Architecture
-```mermaid
-graph TD
-    subgraph Frontend ["Frontend (React + Tailwind)"]
-        DB[Dashboard] --> API
-        P[Patients View] --> API
-        A[Real-time Alerts] --> API
-        S[Settings] --> API
-    end
 
-    subgraph Backend ["Backend (Node.js + Express)"]
-        API[Secure REST API] --> R[Router]
-        R --> C[Coordinator Agent]
-        R --> M[Monitoring Agent]
-    end
-
-    subgraph AI ["Multi-Agent Layer (Google Gemini)"]
-        C --> P_Agent[Prediction Agent]
-        C --> NLP_Agent[Clinical NLP Agent]
-        C --> K_Agent[Medical Knowledge Agent]
-        C --> D_Agent[Document Parser Agent]
-    end
-    
-    subgraph Storage ["Data Layer"]
-        API --> DB_Layer[(SQLite / Postgres)]
-    end
 ```
-
-
+                        ┌─────────────────────────┐
+                        │   React + Vite Frontend  │
+                        │  (clinician dashboard)   │
+                        └────────────┬─────────────┘
+                                     │ REST / WebSocket
+                        ┌────────────▼─────────────┐
+                        │  Express + TypeScript      │
+                        │  Backend (API gateway)     │
+                        └────────────┬─────────────┘
+                                     │
+                        ┌────────────▼─────────────┐
+                        │      MCP Server            │
+                        │ (tool + context routing)   │
+                        └──┬─────┬─────┬─────┬──────┘
+                           │     │     │     │
+              ┌────────────┘     │     │     └────────────┐
+              ▼                  ▼     ▼                    ▼
+      ┌───────────────┐ ┌───────────────┐ ┌────────────────┐ ┌──────────────────┐
+      │ Monitoring     │ │ Document       │ │ Medical         │ │ Prediction        │
+      │ Agent          │ │ Understanding  │ │ Knowledge       │ │ Agent             │
+      │ (vitals/labs)  │ │ Agent (notes)  │ │ Agent (guidance)│ │ (deterioration    │
+      │                │ │                │ │                 │ │  risk scoring)    │
+      └───────┬────────┘ └───────┬────────┘ └────────┬────────┘ └─────────┬─────────┘
+              │                  │                    │                    │
+              └──────────────────┴─────────┬──────────┴────────────────────┘
+                                            ▼
+                                 ┌─────────────────────┐
+                                 │  Coordinator Agent    │
+                                 │  (synthesis + final   │
+                                 │   recommendation)     │
+                                 └──────────┬────────────┘
+                                            ▼
+                                  Gemini API (reasoning /
+                                  generation backbone for
+                                  all five agents)
+```
 
 **Agent responsibilities:**
 
@@ -141,7 +139,7 @@ graph TD
 - **Secret management:** Secrets (Gemini API key, any service credentials) are managed via `.env` files excluded from version control, injected into containers at runtime through Docker Compose environment configuration.
 - **Access control & auditability:** Role-based admin access (e.g., Chief Intensivist role shown in Settings), Two-Factor Authentication on the account, and a downloadable **Audit Log export (CSV)** covering every user action — giving hospitals a verifiable trail of who did what, when.
 
-![Settings & Preferences — HIPAA/GDPR compliance, 2FA, audit log export](images/04_settings_compliance.png)
+![Settings & Preferences — HIPAA/GDPR compliance, 2FA, audit log export](https://drive.google.com/uc?export=view&id=1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8)
 
 ## 12. Challenges
 
@@ -202,58 +200,17 @@ PraOjas AI shows how a multi-agent architecture — rather than a single general
 
 ## 20. Media Gallery
 
-## Screenshots & Demo
-
-### 1. Landing Page — "Predicting Critical Trajectories Before They Happen"
-*Hero section showcasing the mission of PraOjas AI with ICU monitoring visuals*
-
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF=w400" alt="PraOjas AI Landing Page" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
-  </a>
-  <p><strong>Click to view full screenshot</strong></p>
-</div>
-
-### 2. ICU Overview Dashboard
-*High-level analytics with risk trends, patient status distribution, and key metrics (6 active ICU beds, 2 critical patients, 39% average sepsis risk)*
-
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/1_0xdNFiWGp1TA_2PV8QzlNRhuPjEaVoy/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1g_VdqaflV8sGSY54EVayFlig_1s3MUHg=w400" alt="ICU Overview Dashboard" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
-  </a>
-  <p><strong>Click to view full screenshot</strong></p>
-</div>
-
-### 3. ICU Roster Overview
-*Detailed patient registry with real-time vitals, sepsis risk scores, and patient status indicators (Critical/Warning/Stable)*
-
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP=w400" alt="ICU Roster Overview" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
-  </a>
-  <p><strong>Click to view full screenshot</strong></p>
-</div>
-
-### 4. Patient Profile & Risk Assessment
-*Comprehensive patient view with real-time vitals, risk scores, and clinical history*
-
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8=w400" alt="Patient Profile & Risk Assessment" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
-  </a>
-  <p><strong>Click to view full screenshot</strong></p>
-</div>
-
-### 5. Settings & Preferences
-*User profile, security settings, authentication management, and HIPAA compliance options*
-
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://drive.google.com/file/d/1g_VdqaflV8sGSY54EVayFlig_1s3MUHg/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1_0xdNFiWGp1TA_2PV8QzlNRhuPjEaVoy=w400" alt="Settings & Preferences" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
-  </a>
-  <p><strong>Click to view full screenshot</strong></p>
-</div>
+- [x] **Cover image** — [the landing page hero](https://drive.google.com/file/d/1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF/view?usp=sharing): "Predicting Critical Trajectories Before They Happen," with the ICU night-shift control-room visual.
+- [ ] Architecture diagram (export the diagram in Section 7 as an image)
+- [ ] Workflow diagram (the step-by-step user workflow in Section 6)
+- [x] **UI screenshots (embedded above, hosted on Google Drive):**
+  - [ICU Overview dashboard](https://drive.google.com/file/d/1g_VdqaflV8sGSY54EVayFlig_1s3MUHg/view?usp=sharing) — bed count, critical count, interventions, AI accuracy, sepsis-risk trend, patient-status breakdown
+  - [ICU Roster / Patient Registry](https://drive.google.com/file/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP/view?usp=sharing) — multi-patient table with live vitals + sepsis risk
+  - [Individual patient workspace](https://drive.google.com/file/d/1_0xdNFiWGp1TA_2PV8QzlNRhuPjEaVoy/view?usp=sharing) — vitals tiles, 12-hour trend chart, action buttons, tabbed clinical data
+  - [Settings & Preferences](https://drive.google.com/file/d/1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8/view?usp=sharing) — compliance, security, audit log
+- [ ] Agent interaction flow (sequence of MCP calls for one request — worth a dedicated diagram since the current screenshots show the *outcome* of agent reasoning, not the agent handoff itself)
+- [ ] Demo video (link from Section 19)
 
 ---
 
-
+**Outstanding item from prior review:** confirm/remove the stray "repo" comment in the title block before final submission.
