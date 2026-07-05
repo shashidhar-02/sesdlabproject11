@@ -57,44 +57,34 @@ PraOjas AI ingests a patient's live vitals, lab data, and clinical notes, and pr
 8. The system supports the decision — it does not replace the clinician.
 
 ## 7. Architecture
+```mermaid
+graph TD
+    subgraph Frontend ["Frontend (React + Tailwind)"]
+        DB[Dashboard] --> API
+        P[Patients View] --> API
+        A[Real-time Alerts] --> API
+        S[Settings] --> API
+    end
 
+    subgraph Backend ["Backend (Node.js + Express)"]
+        API[Secure REST API] --> R[Router]
+        R --> C[Coordinator Agent]
+        R --> M[Monitoring Agent]
+    end
+
+    subgraph AI ["Multi-Agent Layer (Google Gemini)"]
+        C --> P_Agent[Prediction Agent]
+        C --> NLP_Agent[Clinical NLP Agent]
+        C --> K_Agent[Medical Knowledge Agent]
+        C --> D_Agent[Document Parser Agent]
+    end
+    
+    subgraph Storage ["Data Layer"]
+        API --> DB_Layer[(SQLite / Postgres)]
+    end
 ```
-                        ┌─────────────────────────┐
-                        │   React + Vite Frontend  │
-                        │  (clinician dashboard)   │
-                        └────────────┬─────────────┘
-                                     │ REST / WebSocket
-                        ┌────────────▼─────────────┐
-                        │  Express + TypeScript      │
-                        │  Backend (API gateway)     │
-                        └────────────┬─────────────┘
-                                     │
-                        ┌────────────▼─────────────┐
-                        │      MCP Server            │
-                        │ (tool + context routing)   │
-                        └──┬─────┬─────┬─────┬──────┘
-                           │     │     │     │
-              ┌────────────┘     │     │     └────────────┐
-              ▼                  ▼     ▼                    ▼
-      ┌───────────────┐ ┌───────────────┐ ┌────────────────┐ ┌──────────────────┐
-      │ Monitoring     │ │ Document       │ │ Medical         │ │ Prediction        │
-      │ Agent          │ │ Understanding  │ │ Knowledge       │ │ Agent             │
-      │ (vitals/labs)  │ │ Agent (notes)  │ │ Agent (guidance)│ │ (deterioration    │
-      │                │ │                │ │                 │ │  risk scoring)    │
-      └───────┬────────┘ └───────┬────────┘ └────────┬────────┘ └─────────┬─────────┘
-              │                  │                    │                    │
-              └──────────────────┴─────────┬──────────┴────────────────────┘
-                                            ▼
-                                 ┌─────────────────────┐
-                                 │  Coordinator Agent    │
-                                 │  (synthesis + final   │
-                                 │   recommendation)     │
-                                 └──────────┬────────────┘
-                                            ▼
-                                  Gemini API (reasoning /
-                                  generation backbone for
-                                  all five agents)
-```
+
+
 
 **Agent responsibilities:**
 
