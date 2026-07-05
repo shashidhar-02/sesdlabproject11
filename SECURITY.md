@@ -261,8 +261,7 @@ README includes: full feature list, environment variable setup (`GEMINI_API_KEY`
 ##  Media Gallery
 
 - [x] **Cover image** — [landing page hero](https://drive.google.com/file/d/1mU1Ao-JxNlLuT_OwqN2U8PBuFVU52pzF/view?usp=sharing): "Predicting Critical Trajectories Before They Happen."
-- [x] **Architecture diagram** — Mermaid system + sequence diagrams in Section 7 (export as PNG for platforms that don't render Mermaid, e.g. Kaggle's editor).
-- [ ] Workflow diagram (the step-by-step user workflow in Section 6 — can be a simplified version of the sequence diagram).
+
 - [x] **UI screenshots:**
   - [ICU Overview dashboard](https://drive.google.com/file/d/1g_VdqaflV8sGSY54EVayFlig_1s3MUHg/view?usp=sharing)
   - [ICU Roster / Patient Registry](https://drive.google.com/file/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP/view?usp=sharing)
