@@ -56,7 +56,7 @@ PraOjas AI ingests a patient's live vitals, lab data, and clinical notes, and pr
 
 <div style="text-align: center; margin: 20px 0;">
   <a href="https://drive.google.com/file/d/1_0xdNFiWGp1TA_2PV8QzlNRhuPjEaVoy/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-    <img src="https://lh3.googleusercontent.com/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP=w400" alt="ICU patient Overview" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
+    <img src="https://drive.google.com/file/d/1_0xdNFiWGp1TA_2PV8QzlNRhuPjEaVoy/view?usp=drive_link" alt="ICU patient Overview" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
   </a>
   <p><strong>Click to view full screenshot</strong></p>
 </div>
