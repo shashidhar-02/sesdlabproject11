@@ -45,22 +45,21 @@ PraOjas AI ingests a patient's live vitals, lab data, and clinical notes, and pr
 2. The **ICU Overview dashboard** greets them with ward-level analytics: total active ICU beds, count of critical patients, interventions performed that day, overall AI model accuracy, a 24-hour average sepsis-risk trend chart, and a breakdown of current patient status (Stable / Warning / Critical).
 3. From the **Patients** view, the clinician sees a full **ICU Roster** — every patient's status, department, live HR/BP/SpO₂, computed sepsis-risk percentage, and admission date, sortable and filterable by status and department.
 
-<p align="center">
-  <img src="https://drive.google.com/file/d/1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8/view?usp=drive_link" width="900">
-</p>
-
-<p align="center">
-  <img src="https://drive.google.com/file/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP/view?usp=drive_link" width="900">
-</p>
-
+<div style="text-align: center; margin: 20px 0;">
+  <a href="https://drive.google.com/file/d/1_0xdNFiWGp1TA_2PV8QzlNRhuPjEaVoy/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <img src="https://lh3.googleusercontent.com/d/1g_VdqaflV8sGSY54EVayFlig_1s3MUHg=w400" alt="ICU Overview Dashboard" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
+  </a>
+  <p><strong>Click to view full screenshot</strong></p>
+</div>
 
 4. Opening an individual patient (e.g., a 67-year-old male flagged Critical) surfaces a dedicated patient workspace: live vitals tiles (heart rate, systolic BP, SpO₂, temperature, respiratory rate, lactate), a 12-hour multi-line vitals trend chart, and tabs for Vitals History, Lab Results, Medications, Clinical Notes, and a Decision Log.
 
-
-<p align="center">
-  <img src="https://drive.google.com/file/d/1_0xdNFiWGp1TA_2PV8QzlNRhuPjEaVoy/view?usp=drive_link" width="900">
-</p>
-
+<div style="text-align: center; margin: 20px 0;">
+  <a href="https://drive.google.com/file/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <img src="https://lh3.googleusercontent.com/d/1mnTGstUANcbUH3G-vp7DPlYaPYz5_-RP=w400" alt="ICU Roster Overview" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; height: auto;">
+  </a>
+  <p><strong>Click to view full screenshot</strong></p>
+</div>
 5. Behind the scenes, the **Monitoring Agent** streams and trends the vitals/labs shown on this page, the **Document Understanding Agent** parses the Clinical Notes tab, the **Medical Knowledge Agent** grounds any clinical guidance referenced, and the **Prediction Agent** computes the sepsis-risk percentage shown throughout the UI.
 6. The clinician can click **"Initiate AI Risk Analysis"** at any time — this triggers the **Coordinator Agent**, which synthesizes all four specialist agents' outputs into a single explainable recommendation, logged to that patient's Decision Log rather than surfaced as an opaque score.
 7. Direct clinical actions (Order Labs, Adjust Meds, Alert Team, Export Report) are available inline, so the workflow goes from signal → explanation → action without leaving the page.
