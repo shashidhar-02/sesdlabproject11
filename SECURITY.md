@@ -211,8 +211,7 @@ PraOjas AI is live and fully functional at **praojas-ai.onrender.com**:
 - **Sample explanation (`/api/explain`):** ranks Lactate (0.85) and Heart Rate (0.65) as the top drivers of that sepsis score, extracts "Suspected Sepsis" and "Hypotension" as diagnoses and "Fever"/"Altered Mental Status" as symptoms — giving the clinician an inspectable rationale, not a bare number.
 - **Governance surface:** a Settings panel exposing HIPAA/GDPR compliance status, two-factor authentication, and audit-log export, reflecting the production security checklist above rather than a demo-only shell.
 
-![Settings & Preferences — HIPAA/GDPR compliance, 2FA, audit log export](https://drive.google.com/uc?export=view&id=1rZw31A9F-4NFu_Xptp-ufi-7JTnwwdc8)
-
+![patient overview which is added by doctor](https://drive.google.com/uc?export=view&id=1e9hk75QRzmr38w_u7BHHMPYgaoFCTB0d)
 ## Impact
 
 - **Time saved:** Consolidates vitals, labs, and note review into one dashboard with a one-click "Initiate AI Risk Analysis" action, instead of manual cross-referencing across systems.
