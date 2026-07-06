@@ -260,7 +260,7 @@ README includes: full feature list, environment variable setup (`GEMINI_API_KEY`
 
 **Local demo:** `npm install && npm run dev` → frontend at `http://localhost:5173`, backend at `http://localhost:3000`.
 
-*(If the live instance gates login behind a clinician account, add a demo/guest credential to the README so judges aren't blocked.)*
+
 
 ## YouTube Video (≤5 minutes)
 
